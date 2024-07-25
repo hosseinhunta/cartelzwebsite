@@ -1,7 +1,19 @@
-import Image from "next/image";
+import type { Metadata } from "next";
 import cartelzLogo from "@/utils/image/cartelzlogo";
 import cardImage from "@/utils/image/cardImage";
-export default function Home() {
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Car[T]elz | اتصال به سرور",
+  description: "مجموعه سرور های مسابقه ای و فان کانتر 1.6 در ایران",
+  keywords:
+    "cs 1.6,counter,strike,1.6,game,server,match,کانتر,مچ,مسابقه,fun,فان,اتصال به سرور,how-to-connect",
+  authors: [{ name: "Hossein Mohmmadian", url: "Hosseinhunta.ir" }],
+  generator: "Next.js",
+  verification: { google: "QgLb_RUXj8cd62qydNNiVr2v6Qxkh8fVeufjXEK74rE" },
+};
+
+export default function HTC() {
   return (
     <main className="bg-[url('/bg.png')] font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover">
       <div className="max-w-4xl backdrop-blur-sm flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
@@ -30,40 +42,31 @@ export default function Home() {
               تجربه ای متفاوت <span className="text-green-700">کانتر</span> در
               سرور های مسابقه ای کارتلز
             </h1>
-            <p className="mt-4">
-              <strong className="">سلام به همه پلیرهای عزیز</strong>
-              <br />
-              <br />
-              ما اینجا هستیم تا بهترین تجربه بازی کانتر 1.6 را برای شما فراهم
-              کنیم.
-            </p>
+            <div className="mt-4">
+              <p className="font-semibold my-3">
+                نوع کانتر خود را انتخاب کنید.
+              </p>
+              <p>
+                اگر شما بازی کانتر 1.6 را به صورت قانونی از برنامه Steam خریداری
+                کرده اید؛ بازی را در اکانت Steam خود دارید می توانید بر روی
+                گزینه اول Counter Strike Steam کلیک کنید.
+                <br /> در غیر این صورت بر روی Counter Strike Non Steam کلیک
+                کنید.
+              </p>
+            </div>
             <div className="flex md:flex-row flex-col items-center justify-center p-4">
               <div className="flex flex-col items-center justify-center my-4 space-y-4 p-2">
                 <a
-                  href="/how-to-connect"
-                  className="w-48 text-center bg-green-700 hover:bg-green-900 text-white text-2xl py-2 px-4 rounded-full font-asrjadid"
+                  href="/how-to-connect/steam"
+                  className="w-max text-center bg-slate-500 hover:bg-slate-900 text-white text-xl p-3 rounded-full"
                 >
-                  اتصال به سرور
+                  Counter Strike Steam
                 </a>
                 <a
-                  href="/ban-list"
-                  className="w-48 text-center  bg-red-700 hover:bg-red-900 text-white text-2xl py-2 px-4 rounded-full font-asrjadid"
+                  href="/how-to-connect/nonsteam"
+                  className="w-max text-center  bg-orange-400 hover:bg-orange-800 text-white text-xl p-3 rounded-full"
                 >
-                  پیگیری بن
-                </a>
-              </div>
-              <div className="flex flex-col items-center justify-center my-4 space-y-4 p-2">
-                <a
-                  href="https://t.me/CarTelzcss"
-                  className="w-48 text-center bg-blue-400 hover:bg-blue-600 text-white text-2xl py-2 px-4 rounded-full font-asrjadid"
-                >
-                  تلگرام ما
-                </a>
-                <a
-                  href="/status"
-                  className="w-48 text-center bg-slate-500 hover:bg-slate-900 text-white text-2xl py-2 px-4 rounded-full font-asrjadid"
-                >
-                  وضعیت سرور ها
+                  Counter Strike Non Steam
                 </a>
               </div>
             </div>
